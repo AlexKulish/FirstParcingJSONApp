@@ -56,15 +56,64 @@
 		59CAFB582791A8F100E9382C /* FirstParcingJSONApp */ = {
 			isa = PBXGroup;
 			children = (
-				59CAFB592791A8F100E9382C /* AppDelegate.swift */,
-				59CAFB5B2791A8F100E9382C /* SceneDelegate.swift */,
-				59CAFB5D2791A8F100E9382C /* ViewController.swift */,
-				59CAFB5F2791A8F100E9382C /* Main.storyboard */,
-				59CAFB622791A8F600E9382C /* Assets.xcassets */,
-				59CAFB642791A8F600E9382C /* LaunchScreen.storyboard */,
-				59CAFB672791A8F600E9382C /* Info.plist */,
+				59CAFB6F2791A95100E9382C /* ViewControllers */,
+				59CAFB6E2791A93A00E9382C /* Storyboards */,
+				59CAFB722791A9B100E9382C /* NetworkingManagers */,
+				59CAFB712791A99F00E9382C /* Models */,
+				59CAFB702791A96600E9382C /* SupportFiles */,
+				59CAFB6D2791A92D00E9382C /* Recources */,
 			);
 			path = FirstParcingJSONApp;
+			sourceTree = "<group>";
+		};
+		59CAFB6D2791A92D00E9382C /* Recources */ = {
+			isa = PBXGroup;
+			children = (
+				59CAFB622791A8F600E9382C /* Assets.xcassets */,
+			);
+			path = Recources;
+			sourceTree = "<group>";
+		};
+		59CAFB6E2791A93A00E9382C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				59CAFB5F2791A8F100E9382C /* Main.storyboard */,
+				59CAFB642791A8F600E9382C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		59CAFB6F2791A95100E9382C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				59CAFB5D2791A8F100E9382C /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		59CAFB702791A96600E9382C /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				59CAFB5B2791A8F100E9382C /* SceneDelegate.swift */,
+				59CAFB592791A8F100E9382C /* AppDelegate.swift */,
+				59CAFB672791A8F600E9382C /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		59CAFB712791A99F00E9382C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			path = Recources;
+			sourceTree = "<group>";
+		};
+		59CAFB722791A9B100E9382C /* NetworkingManagers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkingManagers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +339,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FirstParcingJSONApp/Info.plist;
+				INFOPLIST_FILE = FirstParcingJSONApp/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +366,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FirstParcingJSONApp/Info.plist;
+				INFOPLIST_FILE = FirstParcingJSONApp/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
