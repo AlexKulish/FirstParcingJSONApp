@@ -13,20 +13,33 @@ class FactViewController: UIViewController {
     @IBOutlet weak var factLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    private let url = "https://api.chucknorris.io/jokes/random"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-        NetworkingManager.shared.fetchFact(url: url) { image, fact in
-            self.imageView.image = image
-            self.factLabel.text = fact
-            self.activityIndicator.stopAnimating()
-        }
+        fetchFact()
     }
     
     @IBAction func returnAction() {
         dismiss(animated: true)
+    }
+    
+    private func fetchFact() {
+        NetworkingManager.shared.fetchFact(from: Link.chuckNorrisApi.rawValue) { fact in
+            // помещаем в глобал поток, чтобы не тормозило переход
+            DispatchQueue.global().async {
+                guard let urlImage = URL(string: fact.icon_url ?? "") else { return }
+                guard let imageData = try? Data(contentsOf: urlImage) else { return }
+                
+//вариант реализации через class ImageManager
+//guard let imageData = ImageManager.shared.fetchImage(from: fact.icon_url) else { return }
+                
+                DispatchQueue.main.async {
+                    self.factLabel.text = fact.value
+                    self.imageView.image = UIImage(data: imageData)
+                    self.activityIndicator.stopAnimating()
+                }
+            }
+        }
     }
 }
