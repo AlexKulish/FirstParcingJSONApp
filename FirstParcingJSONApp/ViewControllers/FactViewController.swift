@@ -28,7 +28,7 @@ class FactViewController: UIViewController {
         NetworkingManager.shared.fetchFact(from: Link.chuckNorrisApi.rawValue) { fact in
             // помещаем в глобал поток, чтобы не тормозило переход
             DispatchQueue.global().async {
-                guard let urlImage = URL(string: fact.icon_url ?? "") else { return }
+                guard let urlImage = URL(string: fact.iconUrl ?? "") else { return }
                 guard let imageData = try? Data(contentsOf: urlImage) else { return }
                 
 //вариант реализации через class ImageManager

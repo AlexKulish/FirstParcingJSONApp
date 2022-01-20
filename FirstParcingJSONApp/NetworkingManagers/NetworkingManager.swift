@@ -21,7 +21,10 @@ class NetworkingManager {
             }
             // пытаюсь распарсить json, если получится - вернет заполненный экземпляр модели
             do {
-                let fact = try JSONDecoder().decode(Fact.self, from: data)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                let fact = try decoder.decode(Fact.self, from: data)
                 // выношу в main thread чтобы действие происходило асинхронно, т.е параллельно основному потоку
                 DispatchQueue.main.async {
                     completion(fact)

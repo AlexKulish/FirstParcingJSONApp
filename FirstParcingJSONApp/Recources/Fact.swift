@@ -8,7 +8,7 @@
 import Foundation
 
 struct Fact: Decodable {
-    let icon_url: String?
+    let iconUrl: String?
     let value: String?
 }
 
